@@ -1,4 +1,9 @@
 import React, { Component } from 'react';
+import Container from '@material-ui/core/Container';
+import TextField from '@material-ui/core/TextField';
+import Button from '@material-ui/core/Button';
+import Grid from '@material-ui/core/Grid';
+import Link from '@material-ui/core/Link';
 
 class LoginComponent extends Component<any, any> {
     constructor(props: any) {
@@ -24,18 +29,67 @@ class LoginComponent extends Component<any, any> {
         } else {
             this.setState({ loginFailed: true });
         }
-        console.log(this.state.isLoggedIn);
+       console.log(this.state.isLoggedIn);
     }
 
     render() {
-        return <div className="login-screen">
-            <form onSubmit={this.submitForm}>
-                <input type="text" placeholder="Username" name="username" onChange={e => this.setState({ username: e.target.value })}></input><br></br>
-                <input type="password" placeholder="Password" name="password" onChange={e => this.setState({ password: e.target.value })}></input><br></br>
-                <button type="submit" disabled={!this.validateForm()}>Login</button>
+        return <Container component="main" maxWidth="xs">
+            <form noValidate onSubmit={this.submitForm}>
+                <TextField
+                    variant="outlined"
+                    margin="normal"
+                    required
+                    fullWidth
+                    id="username"
+                    label="Email Address"
+                    name="username"
+                    autoFocus
+                    onChange={e => this.setState({ username: e.target.value })}
+                />
+                <TextField
+                    variant="outlined"
+                    margin="normal"
+                    required
+                    fullWidth
+                    name="password"
+                    label="Password"
+                    type="password"
+                    id="password"
+                    onChange={e => this.setState({ password: e.target.value})}
+                />
+                {/* <FormControlLabel
+                    control={<Checkbox value="remember" color="primary" />}
+                    label="Remember me"
+                /> */}
+                {this.validateForm() && <Button
+                    type="submit"
+                    fullWidth
+                    variant="contained"
+                    color="primary"
+                >Sign In
+                </Button>}
+                {!this.validateForm() && <Button
+                    type="submit"
+                    fullWidth
+                    variant="contained"
+                    color="primary"
+                    disabled
+                >Sign In
+                </Button>}
+                <Grid container>
+                    <Grid item xs>
+                        <Link href="#" variant="body2">
+                            Forgot password?
+                        </Link>
+                    </Grid>
+                    <Grid item>
+                        <Link href="#" variant="body2">
+                            {"Don't have an account? Sign Up"}
+                        </Link>
+                    </Grid>
+                </Grid>
             </form>
-
-        </div>;
+        </Container>;
     }
 }
 
