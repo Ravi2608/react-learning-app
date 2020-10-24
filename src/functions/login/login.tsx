@@ -8,12 +8,13 @@ function Login() {
     function validateForm() {
         return username.length > 0 && password.length > 0;
     }
+
     function handleSubmit(event: any) {
         event.preventDefault();
         if(username === "Admin" && password === "Password"){
             alert("Login Successful");
         } else {
-            alert("Login Failed");
+          alert("Login Failed");
         }
         resetLoginForm();
     }
@@ -30,7 +31,6 @@ function Login() {
                 <input type="password" placeholder="Password" name="password" value={password} onChange={e => setPassword(e.target.value)}></input><br></br>
                 <button type="submit" disabled={!validateForm()}>Login</button>
             </form>
-
         </div>
     );
 

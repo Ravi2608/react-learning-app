@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Header from '../functions/header';
+import Header from '../functions/components/header';
 
 class Dashboard extends Component<any, any>{
 
