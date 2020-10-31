@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Container from '@material-ui/core/Container';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
+import Alert from '@material-ui/lab/Alert';
 import Grid from '@material-ui/core/Grid';
 import Link from '@material-ui/core/Link';
 import './login.component.scss';
@@ -91,6 +92,7 @@ class LoginComponent extends Component<any, any> {
                         </Grid>
                     </Grid>
                 </form>
+                { this.state.loginFailed && <Alert severity="error">Login failed.</Alert>}
             </div>
         </Container>;
     }
