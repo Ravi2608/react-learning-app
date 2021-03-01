@@ -92,7 +92,7 @@ class LoginComponent extends Component<any, any> {
                         </Grid>
                     </Grid>
                 </form>
-                { this.state.loginFailed && <Alert severity="error">Login failed.</Alert>}
+                {this.state.loginFailed && <Alert severity="error">Login failed.</Alert>}
             </div>
         </Container>;
     }
