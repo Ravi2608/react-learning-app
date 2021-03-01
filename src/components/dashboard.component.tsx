@@ -6,7 +6,7 @@ class Dashboard extends Component<any, any>{
     render() {
         return (
             <React.Fragment>
-                <Header/>
+                <Header />
             </React.Fragment>
         );
     }
