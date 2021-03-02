@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { getCategories } from '../data-access/fetchCategories';
+import { getCategories } from '../data/fetchCategories';
 import Header from '../functions/components/header';
 
 class Dashboard extends Component<any, any>{
