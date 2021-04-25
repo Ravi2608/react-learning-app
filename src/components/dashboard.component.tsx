@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { getCategories } from '../data/fetchCategories';
 import Header from '../functions/components/header';
+import UserRegistration from '../functions/components/registrationForm';
 
 class Dashboard extends Component<any, any>{
 
@@ -16,6 +17,7 @@ class Dashboard extends Component<any, any>{
         return (
             <React.Fragment>
                 <Header />
+                <UserRegistration />
             </React.Fragment>
         );
     }
